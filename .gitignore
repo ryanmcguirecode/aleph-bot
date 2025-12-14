@@ -209,6 +209,4 @@ __marimo__/
 # Outputs
 outputs/
 
-teleop_videos/
-
-lerobot/
+.DS_STORE
