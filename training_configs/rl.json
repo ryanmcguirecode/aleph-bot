@@ -1,0 +1,73 @@
+{
+  "env": {
+    "name": "meca500_needle_pick",
+    "fps": 30,
+    "processor": {
+      "control_mode": "leader",
+      "observation": {
+        "add_joint_velocity_to_observation": true,
+        "add_current_to_observation": false,
+        "display_cameras": true
+      },
+      "image_preprocessing": {
+        "crop_params_dict": {
+          "observation.images.front": [180, 250, 120, 150],
+          "observation.images.bottom": [200, 220, 150, 180]
+        },
+        "resize_size": [256, 256]
+      },
+      "gripper": {
+        "use_gripper": true,
+        "gripper_penalty": 0.0
+      },
+      "reset": {
+        "reset_time_s": 5.0,
+        "control_time_s": 25.0,
+        "terminate_on_success": true
+      },
+      "inverse_kinematics": null,
+      "reward_classifier": null,
+      "max_gripper_pos": 1
+    },
+    "teleop": {
+      "type": "omni",
+      "scale_translation": 0.7,
+      "scale_rotation": 0.3
+    },
+    "robot": {
+      "type": "meca",
+      "cameras" : {
+        "front": {
+          "type": "opencv",
+          "index_or_path": 0,
+          "width": 640,
+          "height": 480,
+          "fps": 30
+        },
+        "bottom": {
+          "type": "opencv",
+          "index_or_path": 2,
+          "width": 1280,
+          "height": 720,
+          "fps": 30
+        }
+      },
+      "end_effector_bounds": [
+          [338.25, 429.51],
+          [-101.73, 61.72],
+          [4.07, 49.56],
+          [-180.0, 180.0],
+          [50, 70],
+          [-180.0, 180.0]
+      ]
+    }
+  },
+  "dataset": {
+      "repo_id": "username/needle_pick",
+      "root": null,
+      "task": "pick_and_lift",
+      "num_episodes_to_record": 15,
+      "replay_episode": 0,
+      "push_to_hub": true
+  }
+}

@@ -1,0 +1,1 @@
+lerobot-train   --dataset.repo_id=dylanmcguir3/insert-tool   --policy.type=act   --output_dir=outputs/train/insert-tool-act   --job_name=insert-tool-act   --policy.device=cuda   --wandb.enable=true   --policy.repo_id=dylanmcguir3/insert-tool-act

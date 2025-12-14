@@ -1,0 +1,3 @@
+lerobot-train   --dataset.repo_id=dylanmcguir3/insert-tool   --policy.type=diffusion   --output_
+dir=outputs/train/insert-tool-128   --job_name=insert-tool-128   --policy.device=cuda   --wandb.enable=true   --policy.repo_id=dylanmcguir3/insert-tool-128 --resume=true --
+steps=150000 --config_path=/home/dylan/surgery-automation/outputs/train/insert-tool-128/checkpoints/100000/pretrained_model/train_config.json

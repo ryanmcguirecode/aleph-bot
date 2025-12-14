@@ -1,0 +1,17 @@
+dataset:
+  repo_id: dylanmcguir3/meca-needle-pick-v5
+
+policy:
+  type: pi0
+  pretrained_path: lerobot/pi0_base
+  repo_id: dylanmcguir3/pi0_needle_pick
+  device: cuda
+  compile_model: true
+  gradient_checkpointing: true
+  dtype: bfloat16
+
+training:
+  steps: 3000
+  batch_size: 32
+  output_dir: ./outputs/pi0_finetune_needle
+  job_name: pi0_finetune_needle

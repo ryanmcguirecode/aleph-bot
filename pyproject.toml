@@ -1,0 +1,45 @@
+[project]
+name = "surgery-automation"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10.18"
+dependencies = [
+    "black>=25.9.0",
+    "cython>=3.1.6",
+    "genesis-world>=0.3.4",
+    "keyboard>=0.13.5",
+    "lerobot",
+    "mecademicpy>=2.3.1",
+    "opencv-python>=4.12.0.88",
+    "pin>=3.7.0",
+    "pip>=25.3",
+    "pyopenhaptics>=1.0.1",
+    "pyrealsense2>=2.56.5.9235",
+    "pytest>=8.4.2",
+    "ruff>=0.13.2",
+    "scipy>=1.15.3",
+    "setuptools>=80.9.0",
+    "torch==2.7.1",
+    "torchvision==0.22.1",
+    "wheel>=0.45.1",
+    "xarm-python-sdk>=1.17.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+lerobot = { git = "https://github.com/huggingface/lerobot.git", rev = "main" }
+
+[tool.uv]
+override-dependencies = [
+  "torch==2.7.1; sys_platform == 'linux'",
+  "torchvision==0.22.1; sys_platform == 'linux'",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["teleoperators", "teleoperators.*"]
